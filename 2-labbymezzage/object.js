@@ -11,4 +11,11 @@ var myObject = {
         }
     }
     window.onload = startObj.init;
+    
+    
+    var MessageBoard = {
+        
+        messages:[],
+        init:function()
+    }
 };
