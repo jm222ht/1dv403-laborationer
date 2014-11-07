@@ -2,7 +2,8 @@
 
 window.onload = function(){
 	
-	var secret = 50; // Detta tal behöver bytas ut mot ett slumpat tal.
+	//Det hemliga talet slumpas fram
+    var randomnumber = Math.floor(Math.random() * 101);
 	
 	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var guess = function(number){
