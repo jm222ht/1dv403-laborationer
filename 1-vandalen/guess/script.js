@@ -7,27 +7,28 @@ window.onload = function(){
 	
 	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var guess = function(number){
-		console.log("Det hemliga talet: " + secret); // Du når den yttre variabeln secret innifrån funktionen.
-		console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
+		//console.log("Det hemliga talet: " + secret); // Du når den yttre variabeln secret innifrån funktionen.
+		//console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
 			
 var count = 0;
     do {
-        var number = prompt("Guess the secret number, I´m thinking of a number between 1 and 100");
-
+        
         //Jämförelse av tal samt meddelande
-        if (number == null) {
-            return;
+        if (number == null || number < 1 || number > 100) {
+            return(number + "it not at number beteween 1-100");
         }
         ++count;
         if (number > randomnumber) {
-            alert(number + " is not the secret number. My number is lower.");
+            return(number + " is not the secret number. My number is lower.");
         }
         if (number < randomnumber) {
-            alert(number + " is not the secret number. My number is higher.");
+            return(number + " is not the secret number. My number is higher.");
         }
        
-    } while (number != randomnumber)// Plats för förändring.
-
+    } while (number != randomnumber)
+if (number == randomnumber) {
+        return("The secret number was " + number + ". You got the correct answer in " + count + " guesses.");
+    }
 
 		// Returnera exempelvis: 
 		// [true, "Grattis du vann! Det hemliga talet var X och du behövde Y gissningar för att hitta det."]
