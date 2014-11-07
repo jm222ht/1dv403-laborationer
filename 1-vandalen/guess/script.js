@@ -3,14 +3,30 @@
 window.onload = function(){
 	
 	//Det hemliga talet slumpas fram
-    var randomnumber = Math.floor(Math.random() * 101);
+    var secret = Math.floor(Math.random() * 101);
 	
 	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var guess = function(number){
 		console.log("Det hemliga talet: " + secret); // Du når den yttre variabeln secret innifrån funktionen.
 		console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
 			
-		// Plats för förändring.
+var count = 0;
+    do {
+        var number = prompt("Guess the secret number, I´m thinking of a number between 1 and 100");
+
+        //Jämförelse av tal samt meddelande
+        if (number == null) {
+            return;
+        }
+        ++count;
+        if (number > randomnumber) {
+            alert(number + " is not the secret number. My number is lower.");
+        }
+        if (number < randomnumber) {
+            alert(number + " is not the secret number. My number is higher.");
+        }
+       
+    } while (number != randomnumber)// Plats för förändring.
 
 
 		// Returnera exempelvis: 
