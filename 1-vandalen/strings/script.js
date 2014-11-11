@@ -8,6 +8,34 @@ window.onload = function(){
 		// Returnera den konverterade strängen.
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
 	
+	    //Stringförändrare
+
+	    //Konverterar strängen
+	   
+	        var anotherEvert = "";
+	        for ( var index = 0; index < str.length; index++) {
+	            var char1 = switchCase(str[index]);
+	            if (char1 == "A" || char1 == "a") {
+	                char1 = "#";
+	            }
+
+	            anotherEvert += char1;
+	        }
+
+	        return anotherEvert;
+	    
+
+	    //Ändrar versaler och gemener
+	    function switchCase(char) {
+	        if (char == char.toUpperCase()) {
+	            char = char.toLowerCase();
+	        }
+	        else {
+	            char = char.toUpperCase();
+	        }
+	        return char;
+	    }
+
 
 
 
