@@ -5,18 +5,13 @@ window.onload = function(){
 	
     var birthday = function (date) {
 
+       
         //läser in datum
         var usersDate = Date.parse(date);
         
-
-        //Läser in månad
-        //var month = prompt("Vilken månad fyller du år 1-12)?");
-        //var intMonth = (parseInt(month) - 1);
-
-        //Läser in dag
-        //var day = prompt("Vilken dag fyller du år (1-31)?");
-        //var intDay = parseInt(day);
-
+        if (isNaN(usersDate)) {
+            return alert("Datum saknas");
+        }
         //Skapa två datumobjekt
         var toDay = new Date();
         //var birthdaytoDay = Date.UTC(toDay.getFullYear(), intMonth, (intDay) + 1);
@@ -33,8 +28,8 @@ window.onload = function(){
         //Om födelsedagen inträffar nästkommande år
         
         if (miliDaysLeft < 0) {
-            //birthday = Date.UTC((toDay.getFullYear()) + 1, intMonth, (intDay) + 1);
-            //miliDaysLeft = usersDate - secondsToDay;
+            return alert("Du har fyllt år");
+            
         }
         //Om födelsedagen har inträffat
         
@@ -44,7 +39,7 @@ window.onload = function(){
         var intDay = parseInt(daysLeft);
         return intDay;
 
-        //alert("Det är " + intDay + " dagar kvar till din födelsedag!");
+      
 
 		
 

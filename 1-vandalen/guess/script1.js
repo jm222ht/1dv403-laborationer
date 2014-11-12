@@ -14,23 +14,25 @@ window.onload = function () {
 
     
         var plupp = [];
-
+        
+        
         do {
 
             //Jämförelse av tal samt meddelande
-            if (number < 0 || number > 100) {
-                plupp[1] = ("It is not a number beteween 1-100");
+            if (number < 0 || number > 100 || isNaN(number)) {
+                plupp[1] = ("ERROR! It is not a number beteween 1-100");
                 return plupp;
             }
+
             ++count;
             if (number > secret) {
-               var str = (number + "is not the secret number. My number is lower.");
-               
-               plupp[1] = str;
-               return plupp;
+                var str = (number + " is not the secret number. My number is lower.");
+
+                plupp[1] = str;
+                return plupp;
             }
             if (number < secret) {
-                var str2 = (number + "is not the secret number. My number is higher.");
+                var str2 = (number + " is not the secret number. My number is higher.");
                 plupp[1] = str2;
                 return plupp;
             }
@@ -41,12 +43,14 @@ window.onload = function () {
             plupp[0] = true;
             return plupp;
         }
+    
 
-        // Returnera exempelvis: 
-        // [true, "Grattis du vann! Det hemliga talet var X och du behövde Y gissningar för att hitta det."]
-        // [false, "Det hemliga talet är högre!"]
-        // [false, "Det hemliga talet är lägre!"]
-        // [false, "Talet är utanför intervallet 0 - 100"]		
+    // Returnera exempelvis: 
+    // [true, "Grattis du vann! Det hemliga talet var X och du behövde Y gissningar för att hitta det."]
+    // [false, "Det hemliga talet är högre!"]
+    // [false, "Det hemliga talet är lägre!"]
+    // [false, "Talet är utanför intervallet 0 - 100"]	
+
     };
 
     // ------------------------------------------------------------------------------

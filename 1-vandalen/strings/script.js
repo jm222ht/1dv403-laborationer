@@ -2,6 +2,8 @@
 
 window.onload = function(){
 
+
+   
 	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var convertString = function(str){
 		// Plats för förändring.		
@@ -11,7 +13,18 @@ window.onload = function(){
 	    //Stringförändrare
 
 	    //Konverterar strängen
-	   
+	    //if (str = "") {
+	    //Error( "text saknas, var vänlig skriv i text.")}
+	       
+	   // try{
+	       // str == ""}
+	   // catch (error)
+	    //{
+	       // return "Text saknas, var vänlig skriv i text";
+	    //}
+	    if (str == "")
+	    { return "FEL! Text saknas, var vänlig skriv i text"; }
+
 	        var anotherEvert = "";
 	        for ( var index = 0; index < str.length; index++) {
 	            var char1 = switchCase(str[index]);
@@ -20,6 +33,7 @@ window.onload = function(){
 	            }
 
 	            anotherEvert += char1;
+	           
 	        }
 
 	        return anotherEvert;
@@ -28,7 +42,7 @@ window.onload = function(){
 	    //Ändrar versaler och gemener
 	    function switchCase(char) {
 	        if (char == char.toUpperCase()) {
-	            char = char.toLowerCase();
+	            char == char.toLowerCase();
 	        }
 	        else {
 	            char = char.toUpperCase();
@@ -36,13 +50,9 @@ window.onload = function(){
 	        return char;
 	    }
 
-
-
-
-
-
-
 	};
+
+        
 	// ------------------------------------------------------------------------------
 
 
