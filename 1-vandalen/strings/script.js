@@ -1,55 +1,35 @@
 "use strict";
 
 window.onload = function(){
-
-
    
 	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var convertString = function(str){
-		// Plats för förändring.		
-		// Returnera den konverterade strängen.
-		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
-	
-	    //Stringförändrare
-
-	    //Konverterar strängen
-	    //if (str = "") {
-	    //Error( "text saknas, var vänlig skriv i text.")}
-	       
-	   // try{
-	       // str == ""}
-	   // catch (error)
-	    //{
-	       // return "Text saknas, var vänlig skriv i text";
-	    //}
+		
 	    if (str == "")
 	    { return "FEL! Text saknas, var vänlig skriv i text"; }
 
+        //byte tecken
 	        var anotherEvert = "";
 	        for ( var index = 0; index < str.length; index++) {
 	            var char1 = switchCase(str[index]);
 	            if (char1 == "A" || char1 == "a") {
 	                char1 = "#";
 	            }
-
 	            anotherEvert += char1;
-	           
 	        }
-
 	        return anotherEvert;
 	    
 
 	    //Ändrar versaler och gemener
 	    function switchCase(char) {
 	        if (char == char.toUpperCase()) {
-	            char == char.toLowerCase();
+	            char = char.toLowerCase();
 	        }
 	        else {
 	            char = char.toUpperCase();
 	        }
 	        return char;
 	    }
-
 	};
 
         

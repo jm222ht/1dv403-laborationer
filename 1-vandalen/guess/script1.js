@@ -12,12 +12,9 @@ window.onload = function () {
         console.log("Det hemliga talet: " + secret); // Du når den yttre variabeln secret innifrån funktionen.
         console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
 
-    
         var plupp = [];
         
-        
         do {
-
             //Jämförelse av tal samt meddelande
             if (number < 0 || number > 100 || isNaN(number)) {
                 plupp[1] = ("ERROR! It is not a number beteween 1-100");
@@ -27,7 +24,6 @@ window.onload = function () {
             ++count;
             if (number > secret) {
                 var str = (number + " is not the secret number. My number is lower.");
-
                 plupp[1] = str;
                 return plupp;
             }

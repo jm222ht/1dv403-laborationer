@@ -3,8 +3,9 @@
 var makePerson = function (persArr) {
 
    
-    var evert = { names:[], minAge: minAge, maxAge: maxAge, averageAge: averageAge }
-   
+    var evert = { names:[], minAge: 0, maxAge:0, averageAge:0 }
+    var theArray = [];
+    var names = [];
     //loopa igenom arrayen, skilj ut nummer och strängar
     for (var index = 0; index < persArr.length; index++) {
         
@@ -14,9 +15,9 @@ var makePerson = function (persArr) {
         var namn = pers.name;
 
         //namn Array som sorteras
-        var names = [0];
+       
         names.push(namn);
-        names.sort();
+        
 
         //sortera åäö, saknas
 
@@ -30,28 +31,39 @@ var makePerson = function (persArr) {
         var persAge = miliAge / miliYear;
 
         //Skapa array och lägg till ålder
-       var theArray = [0];
+      
        theArray.push(persAge);
 
-        theArray.sort(compare);
-        var minAgenotParsed = theArray[0];
-        var minAge = parseInt(minAgenotParsed);
-        var maxAgenotParsed = theArray[theArray.length - 1];
-        var maxAge = parseInt(maxAgenotParsed);
+       
 
+        //vad gör denna?
         var numbers = [0];
         var box = 0;
         for (var i = 0; i < theArray.length; i++) {
             var finnsIPaket = numbers[i];
             box += finnsIPaket;
         }
+        
 
-        var averageAgenotParsed = finnsIPaket / theArray.length;
-        var averageAge = parseInt(averageAgenotParsed);
        
     }
     
-    
+    names.sort();
+
+    theArray.sort(compare);
+    var minAgenotParsed = theArray[0];
+    var minAge = parseInt(minAgenotParsed);
+    var maxAgenotParsed = theArray[theArray.length - 1];
+    var maxAge = parseInt(maxAgenotParsed);
+
+
+    var averageAgenotParsed = finnsIPaket / theArray.length;
+    var averageAge = parseInt(averageAgenotParsed);
+    evert.minAge = minAge;
+    evert.maxAge = maxAge;
+    evert.averageAge = averageAge;
+
+
     //Referens läroboken s. 115
     function compare(value1, value2) {
         if (value1 < value2) {

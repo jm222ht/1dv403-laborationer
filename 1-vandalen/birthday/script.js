@@ -5,7 +5,6 @@ window.onload = function(){
 	
     var birthday = function (date) {
 
-       
         //läser in datum
         var usersDate = Date.parse(date);
         
@@ -14,10 +13,7 @@ window.onload = function(){
         }
         //Skapa två datumobjekt
         var toDay = new Date();
-        //var birthdaytoDay = Date.UTC(toDay.getFullYear(), intMonth, (intDay) + 1);
         var toDayMili = Date.parse(toDay);
-
-        //var secondsToDay = toDay.getTime();
 
         //Milisekunder till dag
         var miliDay = 1000 * 60 * 60 * 24
@@ -25,29 +21,21 @@ window.onload = function(){
         //Beräkning av dagar kvar
         var miliDaysLeft = usersDate - toDayMili;
 
-        //Om födelsedagen inträffar nästkommande år
-        
-        if (miliDaysLeft < 0) {
-            return alert("Du har fyllt år");
-            
-        }
         //Om födelsedagen har inträffat
-        
-
+        if (miliDaysLeft < 0) {
+            alert("Du har fyllt år");
+            
+            var daysLeft = (miliDaysLeft + miliDay) / miliDay;
+            var intDayYear = (parseInt(daysLeft)-1);
+            return "1 år " + intDayYear;
+        }
+       
         //Meddelande om dagar kvar
         var daysLeft = (miliDaysLeft + miliDay) / miliDay;
         var intDay = parseInt(daysLeft);
         return intDay;
 
       
-
-		
-
-
-			// Din kod här.
-
-
-
 
 	};
 	// ------------------------------------------------------------------------------
