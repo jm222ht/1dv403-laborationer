@@ -3,65 +3,50 @@
 var makePerson = function (persArr) {
 
    
-    var evert = { names:[], minAge: 0, maxAge:0, averageAge:0 }
+    var evert = { minAge: 0, maxAge:0, averageAge:0, names:"" }
     var theArray = [];
-    var names = [];
+    var names1 = [];
     //loopa igenom arrayen, skilj ut nummer och strängar
     for (var index = 0; index < persArr.length; index++) {
         
         //ett objekt
         var pers = persArr[index];
-        var date = pers.born;
+        var alder = pers.age;
         var namn = pers.name;
 
-        //namn Array som sorteras
-       
-        names.push(namn);
-        
-
-        //sortera åäö, saknas
-
-        //åldersuträkning
-        var miliDate = Date.parse(date);
-        var toDay = new Date()
-        var toDayMili = Date.parse(toDay);
-        var miliAge = toDayMili - miliDate;
-
-        var miliYear = 1000 * 60 * 60 * 24 * 365;
-        var persAge = miliAge / miliYear;
-
-        //Skapa array och lägg till ålder
-      
-       theArray.push(persAge);
-
-       
-
-        //vad gör denna?
-        var numbers = [0];
-        var box = 0;
-        for (var i = 0; i < theArray.length; i++) {
-            var finnsIPaket = numbers[i];
-            box += finnsIPaket;
-        }
-        
-
-       
+        // lägger till namn i array       
+        names1.push(namn);
+       theArray.push(alder);   
     }
     
-    names.sort();
+    names1.sort(localeSort);
+    
+
+    var names = names1.join(", ");
+
+    //sortera åäö?
 
     theArray.sort(compare);
-    var minAgenotParsed = theArray[0];
-    var minAge = parseInt(minAgenotParsed);
-    var maxAgenotParsed = theArray[theArray.length - 1];
-    var maxAge = parseInt(maxAgenotParsed);
+
+    //Plockar ut första och sista posten ur sorterad array
+    var minAge = theArray[0];
+    var maxAge = theArray[theArray.length - 1];
+
+    //Medelvärde
+    var box = 0;
+    for (var i = 0; i < theArray.length; i++) {
+    var finnsIPaket = theArray[i];
+    box += finnsIPaket;
+    }
 
 
-    var averageAgenotParsed = finnsIPaket / theArray.length;
-    var averageAge = parseInt(averageAgenotParsed);
+    var averageAge1 = box / theArray.length;
+    var averageAge = Math.round(averageAge1);
+   
     evert.minAge = minAge;
     evert.maxAge = maxAge;
-    evert.averageAge = averageAge;
+    evert.averageAge =averageAge;
+    evert.names = names;
 
 
     //Referens läroboken s. 115
@@ -74,8 +59,15 @@ var makePerson = function (persArr) {
             return 0;
         }
     }
+
+    function localeSort(string1, string2) {
+        return string1.toString().localeCompare(string2.toString());
+    }
+
     //utbojekt
    
+    console.log(evert);
+
     return evert;
 }
        
