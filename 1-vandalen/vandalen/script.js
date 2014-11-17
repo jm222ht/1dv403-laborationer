@@ -20,11 +20,7 @@ var makePerson = function (persArr) {
     }
     
     names1.sort(localeSort);
-    
-
     var names = names1.join(", ");
-
-    //sortera åäö?
 
     theArray.sort(compare);
 
@@ -39,10 +35,10 @@ var makePerson = function (persArr) {
     box += finnsIPaket;
     }
 
-
     var averageAge1 = box / theArray.length;
     var averageAge = Math.round(averageAge1);
    
+    //Tilldela objekt värde
     evert.minAge = minAge;
     evert.maxAge = maxAge;
     evert.averageAge =averageAge;
@@ -59,15 +55,12 @@ var makePerson = function (persArr) {
             return 0;
         }
     }
-
+     //sortera åäö
     function localeSort(string1, string2) {
         return string1.toString().localeCompare(string2.toString());
     }
 
     //utbojekt
-   
-    console.log(evert);
-
     return evert;
 }
        
